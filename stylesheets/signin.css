@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+body{
+    margin:0;
+    padding:0;
+    background: linear-gradient(140deg,#2c5bf7,#ff5ae9);
+    background-size:cover;
+}
+
+.header .h1{
+    position: relative;
+    left:30px;
+    font-size: 50px;
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    padding: 0px;
+} 
+
+.header p{
+    margin:0px 0px 5px 0px;
+}
+
+.header .h2{
+    position: relative;
+    left:30px;
+    padding: 0;
+    font-size:20px;
+    color: #EBED19;
+}
+
+.signin{
+    position: absolute;
+    top:50%;
+    left:50%;
+    height:500px;
+    width:500px;
+    background:rgb(245, 231, 39);
+}
+
+.row1{
+    display:flex;
+}
+
+.col1{
+    flex:50%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.col1 img{
+    position: relative;
+    left:40%;
+    top:50%;
+    transform: translate(-50%,-50%)
+}
+
+
+
+.col2{
+    flex:50%;
+}
+
+.col2 .signin{
+    position: relative;
+    height:500px;
+    width:500px;
+    top:50%;
+    left:50%;
+    background-color: white;
+    transform: translate(-50%,-50%);
+}
+
+.signin h5{
+    padding: 10px;
+    text-align: center;
+}
+
+#fname{
+    width:400px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(11, 129, 226);
+}
+
+.bod{
+    position: relative;
+    width:90%;
+    height: 80%;
+    left:50px;
+}

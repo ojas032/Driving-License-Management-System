@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Ubuntu&display=swap');
+.left{
+  float:left;
+  width:30%;
+  overflow-x:auto;
+  white-space: nowrap; 
+  background-color: rgb(110, 4, 93);
+  height:100%;
+  position: fixed;
+}
+.right{
+  right:0;
+  width:70%;
+  overflow-x:auto;
+  white-space: nowrap; 
+  position: absolute;
+  background-color: white;
+  height:100%;
+  font-family:'Roboto', sans-serif;
+
+}
+.clearfix{
+  clear:both;
+}
+
+.left a{
+  color:rgb(223, 223, 223);
+  padding:20px;
+  display: block;
+  font-family: 'Ubuntu', sans-serif;
+} 
+
+.head{
+  color: white;
+  margin-top:30px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.colm{
+  position: relative;
+  width:100%;
+  height:300px;
+  top:50%;
+  left:50%;
+  background-color:rgb(142, 62, 150);
+  transform:translate(-50%,-50%);
+}
+
+.posi{
+position: relative;
+}
+
+.down{
+  position: relative;
+  top:25%;
+}
+.colm h3{
+  position: relative;
+  color:rgb(255, 255, 255);
+  text-align: center;
+}
+
+.apply{
+  position: absolute;
+  top:100px;
+  right: 20px;
+}
+
+.button{
+  width:400px;
+  height: 40px;
+  background: rgb(109, 108, 108);
+  color: white;
+  border-radius: 10px;
+}

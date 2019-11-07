@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/signin.css') }}">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    </head>
+    <body>
+            <div class="header">
+                <p><span class="h1">Driving License</span></p>
+                <span class="h2">Management System</span>
+            </div>
+
+            <div class="row1">
+                <div class="col1">
+                    <img src="{{ url_for('static', filename='images/image3.png') }}" />
+                    <button href="#" style="position:relative;top:230px;right:90px;height:40px;width:130px;background-color:blueviolet;color:white;border:none"><h6>SignIn</h6></button>
+                </div>
+                <div class="col2">
+                       <div class="signin">
+                           <h5>SignUp</h5>
+                           <div class="bod">
+                            <form method="POST" action="{{url_for('create')}}">
+                                   
+                                    <div class="form-row ">
+                                            <div class="form-group col-md-4">
+                                              <label for="first">First Name</label>
+                                              <input type="text" class="form-control" id="first" placeholder="Email" name="first">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                              <label for="Middle">Middle</label>
+                                              <input type="text" class="form-control" id="Middle" placeholder="Password" name="middle">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="last">Last</label>
+                                                <input type="text" class="form-control" id="last" placeholder="Password" name="last">
+                                            </div>
+                                    </div>        
+                                    <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                              <label for="inputEmail4">Email</label>
+                                              <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                              <label for="inputPassword4">Password</label>
+                                              <input type="password" class="form-control" id="inputPassword4" placeholder="Password" name="password">
+                                            </div>     
+                                     </div>
+                                     <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                              <label for="inputCity">City</label>
+                                              <input type="text" class="form-control" id="inputCity" name="city">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                              <label for="inputState">State</label>
+                                              <select id="inputState" class="form-control" name="state">
+                                                <option selected>Choose...</option>
+                                                <option>...</option>
+                                              </select>
+                                            </div>
+                                            <div class="form-group col-md-2">
+                                              <label for="inputZip">Zip</label>
+                                              <input type="text" class="form-control" id="inputZip" name="zip">
+                                            </div>
+                                    </div>       
+                                    <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                              <label for="Aadhar">Aadhar</label>
+                                              <input type="text" class="form-control" id="Aadhar" placeholder="Aadhar No." name="aadhar">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                              <label for="Mobile">Mobile No.</label>
+                                              <input type="text" class="form-control" id="Mobile" placeholder="Mobile No." name="mobile">
+                                            </div>     
+                                     </div>
+                                     <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                              <label for="user">Username</label>
+                                              <input type="text" class="form-control" id="user" placeholder="Username" name="name">
+                                            </div>
+
+                                            <div class="form-group col-md-6">
+                                                    <label for="D.O.B">D.O.B</label>
+                                                    <input type="date" class="form-control" id="D.O.B" name="date" >
+                                                  </div>
+            
+                                     </div>
+                           
+                           <input type="submit" value="Submit" class="login" style="height:40px;width:130px;background-color:blueviolet;color:white;border:none;font-weight: 500">
+                           </form>
+                           </div>
+                       </div>
+                </div>
+            </div>
+    </body>
+</html>
