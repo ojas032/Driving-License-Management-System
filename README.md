@@ -10,24 +10,24 @@ User Dashboard
 ![](Screenshots/Screenshot%20(10).png)
 Admin Dashboard
 ![](Screenshots/Screenshot%20(15)_LI.jpg)
-Step1:
-install flask by using the command
-pip install Flask
-Libraries Used flask_mysqldb ,flask,datetime,flask_login,uuid
-#(uuid is used to generate unique id)
-Commad to install flask_mysqldb:-
-#(pip install Flask-MySQLdb)
-Command to install uuid
-#(pip install uuid)
-Command to install Flask login:
-#(pip install Flask-Login)
+Step1:<br/>
+Install flask by using the command:-<br/>
+pip install Flask<br/>
+Libraries Used flask_mysqldb ,flask,datetime,flask_login,uuid<br/>
+#(uuid is used to generate unique id)<br/>
+Commad to install flask_mysqldb:-<br/>
+#(pip install Flask-MySQLdb)<br/>
+Command to install uuid<br/>
+#(pip install uuid)<br/>
+Command to install Flask login:<br/>
+#(pip install Flask-Login)<br/>
 
-To set Up Datebase i used phpmyadmin Not because there was any use of php but because i needed MySQL
-To connect it the configuration is already present in (index.py)
-In phpmyadmin you need to create three table in (mydb)
-1.person
-2.users
-3.request
+To set Up Datebase i used phpmyadmin Not because there was any use of php but because i needed MySQL<br/>
+To connect it the configuration is already present in (index.py)<br/>
+In phpmyadmin you need to create three table in (mydb)<br/>
+1.person<br/>
+2.users<br/>
+3.request<br/>
 
 Schema For table person
 ![](Screenshots/1.PNG)
@@ -38,11 +38,10 @@ Schema For table request
 
 
 
-In case of any Trouble email me at corpojasltd@gmail.com
-If you Like it Do give it a star
->............
->.........
->.........
+In case of any Trouble email me at corpojasltd@gmail.com<br/>
+If you Like it Do give it a star<br/>
+>............<br/>
+
 
 
 
