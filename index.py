@@ -22,7 +22,7 @@ mysql = MySQL(app)
 
 #app.config['MAIL_SERVER']='smtp.gmail.com'
 #app.config['MAIL_PORT'] = 465
-#app.config['MAIL_USERNAME'] = 'corpojasltd@gmail.com'
+#app.config['MAIL_USERNAME'] = 'cyz@gmail.com'
 #app.config['MAIL_PASSWORD'] = "uhhgksglkd"
 #app.config['MAIL_USE_TLS'] = False
 #app.config['MAIL_USE_SSL'] = True
@@ -45,7 +45,7 @@ def s_mail():
         name=request.form['username']
         email=request.form['email']
         print(name)
-    msg = Message('Hello', sender = 'corpojasltd@gmail.com', recipients = email)
+    msg = Message('Hello', sender = 'cyz@gmail.com', recipients = email)
     msg.body = "Hello Flask message sent from Flask-Mail"
     return "hello"
 
