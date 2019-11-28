@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/admin.css') }}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+<body>   
+        
+                <div class="left">
+                                <div class="head">
+                                        <h1>Hello, {{name}}</h1>
+                                </div>
+                               
+                                {%if(ap==1)%}
+                                <a href="{{url_for('admin',name=name,ap=1)}}"> <h4><i class='fas fa-play' style='font-size:24px;color: white;'></i> Learning License Requests</h4></a>
+                                {%else%}
+                                <a href="{{url_for('admin',name=name,ap=1)}}"> <h4>Learning License Requests</h4></a>
+                                {%endif%}
+
+                                {%if(ap==2)%}
+                                <a href="{{url_for('admin',name=name,ap=2)}}"><h4><i class='fas fa-play' style='font-size:24px;color: white;'></i>Permanet License Request</h4></a>
+                                {%else%}
+                                <a href="{{url_for('admin',name=name,ap=2)}}"><h4>Permanet License Request</h4></a>
+                                {%endif%}
+
+                                {%if(ap==3)%}
+                                <a href="{{url_for('admin',name=name,ap=3)}}"><h4><i class='fas fa-play' style='font-size:24px;color: white;'></i>Renewal License Request</h4></a>
+                                {%else%}
+                                <a href="{{url_for('admin',name=name,ap=3)}}"><h4>Renewal License Request</h4></a>
+                                {%endif%}
+                                  
+                                {%if(ap==4)%}
+                                <a href="{{url_for('admin',name=name,ap=4)}}"><h4><i class='fas fa-play' style='font-size:24px;color: white;'></i>Lost License Request</h4></a>
+                                {%else%}
+                                <a href="{{url_for('admin',name=name,ap=4)}}"><h4>Lost License Request</h4></a>
+                                {%endif%}
+                                {%if(ap==5 or ap==8)%}
+                                <a href="{{url_for('admin',name=name,ap=5)}}"><h4><i class='fas fa-play' style='font-size:24px;color: white;'></i>Table/Report</h4></a>
+                                {%else%}
+                                <a href="{{url_for('admin',name=name,ap=5)}}"><h4>Table/Report</h4></a>
+                                {%endif%}
+                                {%if(ap==6 or ap==7)%}
+                                <a href="{{url_for('admin',name=name,ap=6)}}"><h4><i class='fas fa-play' style='font-size:24px;color: white;'></i>Get Person Details</h4></a>
+                                {%else%}
+                                <a href="{{url_for('admin',name=name,ap=6)}}"><h4>Get Person Details</h4></a>
+                                {%endif%}
+                                
+                                 
+                              
+                                <div>   
+                                 <button  style="position: relative;top:10px;left:30%;height:40px;width:130px;background-color:blueviolet;color:white;border:none" onclick="location.href='{{url_for('logout')}}';"> <h6>Logout</h6></button>
+                                </div>  
+                </div>
+                <div class="right">
+                <div class="colm container" style="padding: 0;">
+                  <table class="table" style="margin:0;padding:0;">
+                  
+                     {%if(ap|float < 5.0)%}
+                     <thead class="thead-dark" style="margin:0;padding:0;">
+                        <tr>
+                          <th scope="col">ID No.</th>
+                          <th scope="col">Reg No.</th>
+                          <th scope="col">Username</th>
+                          <th scope="col">Date</th>
+                          <th scope="col">Approve</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                     {%endif%}
+                     {%if(ap==1)%} 
+                      {%for i in range(0,l|length)%}
+                      {%if(l[i][3]==1) %}
+                      <tr>
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{l[i][7]}}</td>
+                        <td>{{l[i][1]}}</td>
+                        <td>{{l[i][8]}}</td>
+              
+                        <td><a href="{{url_for('admina',aname=name,name=l[i][1],email=l[i][2],ap=1)}}"><button>Approve</button></a></td>
+                      </tr>
+
+          
+                      {%endif%}
+                      {%endfor%}
+
+                      {%elif(ap==2)%}
+
+                        {%for i in range(0,l|length)%}
+                        {%if(l[i][4]==1) %}
+                        <tr>
+                          <th scope="row">{{i+1}}</th>
+                          <td>{{l[i][7]}}</td>
+                          <td>{{l[i][1]}}</td>
+                          <td>{{l[i][8]}}</td>
+                
+                          <td><a href="{{url_for('admina',aname=name,name=l[i][1],email=l[i][2],ap=2)}}"><button>Approve</button></a></td>
+                        </tr>
+
+            
+                        {%endif%}
+                        {%endfor%}
+
+                        {%elif(ap==3)%}
+
+                        {%for i in range(0,l|length)%}
+                        {%if(l[i][5]==1) %}
+                        <tr>
+                          <th scope="row">{{i+1}}</th>
+                          <td>{{l[i][7]}}</td>
+                          <td>{{l[i][1]}}</td>
+                          <td>{{l[i][8]}}</td>
+                
+                          <td><a href="{{url_for('admina',aname=name,name=l[i][1],email=l[i][2],ap=3)}}"><button>Approve</button></a></td>
+                        </tr>
+
+            
+                        {%endif%}
+                        {%endfor%}
+
+
+                        {%elif(ap==4)%}
+
+                        {%for i in range(0,l|length)%}
+                        {%if(l[i][6]==1) %}
+                        <tr>
+                          <th scope="row">{{i+1}}</th>
+                          <td>{{l[i][7]}}</td>
+                          <td>{{l[i][1]}}</td>
+                          <td>{{l[i][8]}}</td>
+                
+                          <td><a href="{{url_for('admina',aname=name,name=l[i][1],email=l[i][2],ap=4)}}"><button>Approve</button></a></td>
+                        </tr>
+
+            
+                        {%endif%}
+                        {%endfor%}    
+
+                     
+
+         
+
+
+                      {%elif(ap==5 or ap==8)%}
+                      <a href="{{url_for('admin',name=name,ap=5)}}"><button type="button" class="btn btn-primary btn-lg" >Display Table</button></a>
+                     <a href="{{url_for('admin',name=name,ap=8)}}"> <button type="button" class="btn btn-secondary btn-lg" >Generate Report</button></a>
+                          {%if(ap==5)%}
+                          <thead class="thead-dark" style="margin:0;padding:0;">
+                            <tr>
+                              <th scope="col">Id</th>
+                              <th scope="col">Username</th>
+                              <th scope="col">Email</th>
+                              <th scope="col">Reg No.</th>
+                              <th scope="col">Date</th>
+                              <th scope="col">Learning</th>
+                              <th scope="col">Permanent</th>
+                              <th scope="col">Renewal</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          
+                        {%for i in range(0,l|length)%}
+                        
+                        <tr>
+                          <th scope="row">{{i+1}}</th>
+                          <td>{{l[i][1]}}</td>
+                          <td>{{l[i][2]}}</td>
+                          <td>{{l[i][7]}}</td>
+                          <td>{{l[i][8]}}</td>
+                          {%if(l[i][3]==0)%}
+                          <td><span style="color:Red">Not Applied</span></td>
+                          {%elif(l[i][3]==1)%}
+                          <td><span style="color:yellowgreen">Pending</span></td>
+                          {%elif(l[i][3]==2)%}
+                          <td><span style="color:green">Accepted</span></td>
+                          {%endif%}
+
+                          {%if(l[i][4]==0)%}
+                          <td><span style="color:Red">Not Applied</span></td>
+                          {%elif(l[i][4]==1)%}
+                          <td><span style="color:yellowgreen">Pending</span></td>
+                          {%elif(l[i][4]==2)%}
+                          <td><span style="color:green">Accepted</span></td>
+                          {%endif%}
+
+                          {%if(l[i][5]==0)%}
+                          <td><span style="color:Red">Not Applied</span></td>
+                          {%elif(l[i][5]==1)%}
+                          <td><span style="color:yellowgreen">Pending</span></td>
+                          {%elif(l[i][5]==2)%}
+                          <td><span style="color:green">Accepted</span></td>
+                          {%endif%}
+                        </tr>
+                        {%endfor%} 
+                        {%elif(ap==8)%}
+
+                        <div class="container">
+                            <div class="row">
+                              <div class="col" style="padding: 0px;">
+                                  <h1 style="background-color:#a3a1a1;margin:0; padding: 20px;">Total Registeration: {{cnt4[0]}}</h1>
+                              </div>
+                              <div class="col" style="padding:0px;">
+                                  <h1 style="background-color:#c4c4c4;margin:0;padding: 20px;">Registeration from Kanpur: {{cnt5[0]}}</h1>
+                              </div>
+                            </div>
+                        </div>  
+                        
+                        <div class="container">
+                            <div class="row">
+                              <div class="col" style="padding: 0px;">
+                                  <h1 style="background-color:#b8b5b5;margin:0; padding: 20px;">Applied Today: {{cnt[0]}}</h1>
+                              </div>
+                              <div class="col" style="padding:0px;">
+                                  <h1 style="background-color:#d4d3d3;margin:0;padding: 20px;">Applied This Year: {{cnt1[0]}}</h1>
+                              </div>
+                            </div>
+                        </div>  
+                        <div class="container">
+                            <div class="row">
+                              <div class="col" style="padding: 0px;">
+                                  <h1 style="background-color:#e0dede;margin:0px;padding: 20px;">Accepted Learning License: {{cnt2[0]}}</h1>
+                              </div>
+                              <div class="col" style="padding:0px;">
+                                  <h1 style="background-color:#ececec;margin:0px;padding: 20px;">Accepted Permanent License: {{cnt3[0]}}</h1>
+                              </div>
+                            </div>
+                        </div>    
+                        {%endif%}
+                       
+                        
+                      
+
+            
+                      
+                        
+                        
+                        
+
+                        {%elif(ap==6)%}
+
+                        <div style="height:auto;background-color:rgb(3, 1, 1);width:100%;height:auto;color: white;text-align: center;">
+                          <h4 style="padding: 10px;">Search Person Details</h4>
+                        </div>
+                        
+                        <form method="POST" action="{{url_for('check',name=name,ap=6)}}">
+                          <div>  
+                              <span style="left:24%;position: relative;top:20px;"><span style="padding:10px;font-size: 24px;">Search Details: </span><input type="text" style="border-radius:7px; height:40px; width:200px;" name="reg"> <input type="submit" style="width:100px;height:40px;background-color: rgb(71, 149, 212);color: white;border-radius:7px; " ></span>
+                            </div>
+                            
+                          </form>
+                    
+                      
+
+                      {%elif(ap==7)%}
+
+                        <div style="height:auto;background-color:rgb(3, 1, 1);width:100%;height:auto;color: white;text-align: center;">
+                          <h4 style="padding: 10px;">Search Person Details</h4>
+                        </div>
+                        
+                        <form method="POST" action="{{url_for('check',name=name,ap=6)}}">
+                          <div>  
+                              <span style="left:24%;position: relative;top:20px;"><span style="padding:10px;font-size: 24px;">Search Details: </span><input type="text" style="border-radius:7px; height:40px; width:200px;" name="reg"> <input type="submit" style="width:100px;height:40px;background-color: rgb(71, 149, 212);color: white;border-radius:7px; " ></span>
+                            </div>
+                            
+                          </form>
+
+                          <div class="container" style="width: 100%;position: relative;top:50px;height:510px;background-color:rgb(226, 206, 206);">
+                            <h3 style="text-align:center;padding: 10px;color:rgb(44, 13, 13)">Details</h3>
+                              <div class="row">
+                                <div class="col-sm">
+                                  <h4 class="ll"><span style="color: rgb(107, 3, 3);font-weight: bold">Name: </span><span style="color: rgb(0, 30, 114)">{{l1[1]}} {{l1[2]}} {{l1[3]}}</span></h4>
+                                </div>
+                                <div class="col-sm">
+                                  <h4 class="ll"><span style="color: rgb(107, 3, 3);font-weight: bold">Email: </span><span style="color: rgb(0, 30, 114)"> {{l1[4]}}</span></h4>
+                                </div>
+                                <div class="col-sm">
+                                <h4 class="ll"><span style="color: rgb(107, 3, 3);font-weight: bold">City: </span> <span style="color: rgb(0, 30, 114)"> {{l1[6]}}</span> </h4>
+                                </div>
+                              </div>
+                              <br>
+                              <br>
+                              <div class="row">
+                                  <div class="col-sm">
+                                    <h4 class="ll"><span style="color: rgb(107, 3, 3);font-weight: bold">State: </span> <span style="color: rgb(0, 30, 114)"> {{l1[7]}}</span> </h4>
+                                  </div>
+                                  <div class="col-sm">
+                                    <h4 class="ll"><span style="color: rgb(107, 3, 3);font-weight: bold">Pincode: </span> <span style="color: rgb(0, 30, 114)"> {{l1[8]}}</span></h4>
+                                  </div>
+                                  <div class="col-sm">
+                                  <h4 class="ll"><span style="color: rgb(107, 3, 3);font-weight: bold">Aadhar No.: </span> <span style="color: rgb(0, 30, 114)"> {{l1[9]}}</span></h4>
+                                  </div>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="row">
+                                    <div class="col-sm">
+                                      <h4 class="ll"><span style="color: rgb(107, 3, 3);font-weight: bold">Mobile No: </span> <span style="color: rgb(0, 30, 114)"> {{l1[10]}}</span> </h4>
+                                    </div>
+                                    <div class="col-sm">
+                                      <h4 class="ll"><span style="color: rgb(107, 3, 3);font-weight: bold">Username: </span> <span style="color: rgb(0, 30, 114)"> {{l1[11]}}</span></h4>
+                                    </div>
+                                    <div class="col-sm">
+                                    <h4 class="ll"><span style="color: rgb(107, 3, 3);font-weight: bold">D.O.B: </span> <span style="color: rgb(0, 30, 114)"> {{l1[12]}}</span></h4>
+                                    </div>
+                                  </div>
+                            </div>
+
+
+                    
+                      {%endif%}
+
+
+
+                        
+                      
+
+
+
+                    </tbody>
+                  </table>
+                  
+                </div>
+                </div> 
+              <div class="clearfix"></div>
+                         
+</body>
+</html> 

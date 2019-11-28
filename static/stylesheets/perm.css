@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cabin&display=swap');
+.p_h4{
+    text-align: center;
+    position: relative;
+    color:white;
+    top:20%;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.f_h4{
+    text-align: center;
+    position: relative;
+    color: white;
+    padding: 20px;
+    font-family: 'Cabin', sans-serif;
+}
+
+.l_h4{
+    color: rgb(255, 243, 68);
+    font-size:24px;
+    text-align: center;
+}
+
+.o_h4{
+    color: white;
+    font-size:24px;
+    text-align: centre;
+}

@@ -6,12 +6,14 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    </head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
     <body>
         <section class="wave">
                 <div id="v_line"></div>
                 <div class="header">
-                    <p><span class="h1">Driving License</span></p>
+                    <span class="h1">Driving License</span><br>
                     <span class="h2">Management System</span>
                 </div>
                 <div class="container">
@@ -28,13 +30,35 @@
                           <div class="col">
                               <div class="form">
                                     <form method="POST" action="{{url_for('login')}}">   
-                                        <div class="log"><h5>LogIn</h5></div>
+
+                                       
+                                        <div class="log">
+                                                <h5>LogIn</h5>
+                                                {% with messages = get_flashed_messages() %}
+                                                {% if messages %}
+                                                   <ul>
+                                                      {% for message in messages %}
+                                                     <h6 class="l_h4" style="position:absolute;left:120px;color: rgb(250, 236, 41)"> {{ message }}</h6>
+                                                      {% endfor %}
+                                                   </ul>
+                                                {% endif %}
+                                             {% endwith %}
+                                            
+                                             <select name= "tvalue" class="posi col button" style="right: 20px; width:100px;background: rgb(122, 17, 148);
+                                             color: white;
+                                             border-radius: 10px;position:relative;top:20px;padding: 5px;margin-botton:10px;left: 5px;">
+                                                    <option value="User">User</option>
+                                                    <option value="Admin">Admin</option>
+                                            </select>  
+                                            
+                                        </div>
+                                        
                                         <label for="username"><h6>USERNAME</h6></label><br>
                                         <p><input type="text" id="username" name="username" ></p>
                                         <label for="email"><h6>EMAIL</h6></label>
                                         <p><input type="text" id="email" name="email" ></p>
                                         <label for="password"><h6>PASSWORD</h6></label><br>
-                                        <input type="text" id="password" name="password"><br>
+                                        <input type="password" id="password" name="password"><br>
                                         <input type="submit" value="SignIn" class="login" style="height:40px;width:130px;background-color:blueviolet;color:white;border:none;font-weight: 500">
                                         <a href="{{url_for('send')}}"><span class="forgot">Forgot Password?</span></a>
                                     </form>
@@ -44,6 +68,174 @@
               
 
         </section>
+
+        <!---------------------------column-->
+        <div class="container cont">
+            <h1 style="font-family: 'Open Sans', sans-serif;text-align:center" class="traffic">Traffic Signs</h1><br><br>
+            <br>
+                <div class="row">
+                  <div class="col-sm">
+                      <img src="{{ url_for('static', filename='images/Capture.png') }}">
+                    
+                  </div>
+                  <div class="col-sm">
+                        <img src="{{ url_for('static', filename='images/Capture1.png') }}">
+                 
+                  </div>
+                  <div class="col-sm">
+                        <img src="{{ url_for('static', filename='images/Capture2.png') }}">
+                  </div>
+                  <div class="col-sm">
+                        <img src="{{ url_for('static', filename='images/Capture3.png') }}">
+                      
+                    </div>
+                    <div class="col-sm">
+                          <img src="{{ url_for('static', filename='images/Capture4.png') }}">
+                   
+                    </div>
+                    <div class="col-sm">
+                          <img src="{{ url_for('static', filename='images/Capture5.png') }}">
+                    </div>
+                    <div class="col-sm">
+                            <img src="{{ url_for('static', filename='images/Capture6.png') }}">
+                          
+                        </div>
+                        <div class="col-sm">
+                              <img src="{{ url_for('static', filename='images/Capture7.png') }}">
+                       
+                        </div>
+                        <div class="col-sm">
+                              <img src="{{ url_for('static', filename='images/Capture8.png') }}">
+                        </div>
+                        
+                </div>
+
+                    <br>
+
+
+
+                <div class="row">
+                        <div class="col-sm">
+                            <img src="{{ url_for('static', filename='images/Capture9.png') }}">
+                          
+                        </div>
+                        <div class="col-sm">
+                              <img src="{{ url_for('static', filename='images/Capture10.png') }}">
+                       
+                        </div>
+                        <div class="col-sm">
+                              <img src="{{ url_for('static', filename='images/Capture11.png') }}">
+                        </div>
+                        <div class="col-sm">
+                              <img src="{{ url_for('static', filename='images/Capture12.png') }}">
+                            
+                          </div>
+                          <div class="col-sm">
+                                <img src="{{ url_for('static', filename='images/Capture13.png') }}">
+                         
+                          </div>
+                          <div class="col-sm">
+                                <img src="{{ url_for('static', filename='images/Capture14.png') }}">
+                          </div>
+                          <div class="col-sm">
+                                  <img src="{{ url_for('static', filename='images/Capture15.png') }}">
+                                
+                              </div>
+                              <div class="col-sm">
+                                    <img src="{{ url_for('static', filename='images/Capture16.png') }}">
+                             
+                              </div>
+                              <div class="col-sm">
+                                    <img src="{{ url_for('static', filename='images/Capture17.png') }}">
+                              </div>
+                             
+                                  
+                      </div>
+
+
+
+              </div>
+
+              <br>
+              <br>
+              <br>
+              <br>
+
+              <div class="rules">
+                  <h1 style="text-align: center; color: #0f1974"><span class="span1">Some</span><span class="span2">Rules</span></h1>
+                  <br><br><br>  <div class="container">
+                            <div class="row">
+                              <div class="col-sm">
+                                    <div class="card" style="width: 18rem;">
+                                            <img class="card-img-top" src="{{ url_for('static', filename='images/rule1.jpg') }}" alt="Card image cap">
+                                            <div class="card-body">
+                                              <p class="card-text">No person shall operate any motor vehicle on a public highway while  wearing any headset or earphones connected to any electronic device  capable of receiving a radio broadcast or playing a sound recording for  the purpose of transmitting a sound to the human auditory senses and  which headset or earphones muffle or exclude other sounds</p>
+                                            </div>
+                                          </div>
+                              </div>
+                              <div class="col-sm">
+                                    <div class="card" style="width: 18rem;">
+                                            <img class="card-img-top" src="{{ url_for('static', filename='images/rule21.jpg') }}" alt="Card image cap">
+                                            <div class="card-body">
+                                              <p class="card-text">No person shall operate any motor vehicle on a public highway while  wearing any headset or earphones connected to any electronic device  capable of receiving a radio broadcast or playing a sound recording for  the purpose of transmitting a sound to the human auditory senses and  which headset or earphones muffle or exclude other sounds</p>
+                                            </div>
+                                          </div>
+                              </div>
+                              <div class="col-sm">
+                                    <div class="card" style="width: 18rem;">
+                                            <img class="card-img-top" src="{{ url_for('static', filename='images/rule3.jpg') }}" alt="Card image cap">
+                                            <div class="card-body">
+                                              <p class="card-text">The Union Ministry of Road Transport and Highways has said the amendments have been brought in under Section 139 of the Central Motor Vehicle Act, 1989, to allow people to carry driving licence and registration copy in a digital format</p>
+                                            </div>
+                                          </div>
+                              </div>
+                            </div>
+                          </div>
+              </div>
+
+
+
+        <div class="footer">
+                <img src="{{ url_for('static', filename='stylesheets/foot.png.png') }}" alt="Girl in a jacket" >
+                <div class="t1">
+                <table class="table table-borderless table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Features</th>
+                            <th scope="col">Vehicles Code</th>
+                            <th scope="col">Handle</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            
+                            <td>Apply For Learning License</td>
+                            <td>MC 50CC (Motorcycle 50cc) </td>
+                            <td><a href="#" class="fa fa-facebook fa1"></a></td>
+                          </tr>
+                          <tr>
+                            
+                            <td>Apply For Permanent License</td>
+                            <td>MC EX50CC (Motorcycle more than 50cc)</td>
+                            <td> <a href="#" class="fa fa-twitter fa2"></a></td>
+                          </tr>
+                          <tr>
+                            <td>Apply For Renewal License</td>
+                            <td>LMV (Light Motor Vehicle)</td>
+                            <td> <a href="#" class="fa fa-instagram fa3"></a></td>
+                          </tr>
+                          <tr>
+                            <td>Apply For Lost License</td>
+                            <td>HMV (Heavy Motor Vehicle)</td>
+                            <td> <a href="#" class="fa fa-linkedin fa4"></a></td>
+                            </tr>
+                        </tbody>
+                      </table>
+
+                    </div>     
+            <p>Footer</p>
+        </div>
+          
 
 
     </body>

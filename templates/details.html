@@ -1,0 +1,49 @@
+{%extends "side.html"%}
+
+{% block script %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/perm.css') }}">
+{% endblock %}
+
+{%block val%}
+<div class="container" style="width: 100%;position: relative;top:0px;height:100%;background-color:rgb(226, 206, 206);">
+        <h3 style="text-align:center;padding: 10px;color:rgb(44, 13, 13)">Details</h3>
+          <div class="row">
+            <div class="col-sm">
+              <h4 class="ll"><span style="color: rgb(107, 3, 3);font-weight: bold">Name: </span><span style="color: rgb(0, 30, 114)">{{l1[1]}} {{l1[2]}} {{l1[3]}}</span></h4>
+            </div>
+            <div class="col-sm">
+              <h4 class="ll"><span style="color: rgb(107, 3, 3);font-weight: bold">Email: </span><span style="color: rgb(0, 30, 114)"> {{l1[4]}}</span></h4>
+            </div>
+            <div class="col-sm">
+            <h4 class="ll"><span style="color: rgb(107, 3, 3);font-weight: bold">City: </span> <span style="color: rgb(0, 30, 114)"> {{l1[6]}}</span> </h4>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="row">
+              <div class="col-sm">
+                <h4 class="ll"><span style="color: rgb(107, 3, 3);font-weight: bold">State: </span> <span style="color: rgb(0, 30, 114)"> {{l1[7]}}</span> </h4>
+              </div>
+              <div class="col-sm">
+                <h4 class="ll"><span style="color: rgb(107, 3, 3);font-weight: bold">Pincode: </span> <span style="color: rgb(0, 30, 114)"> {{l1[8]}}</span></h4>
+              </div>
+              <div class="col-sm">
+              <h4 class="ll"><span style="color: rgb(107, 3, 3);font-weight: bold">Aadhar No.: </span> <span style="color: rgb(0, 30, 114)"> {{l1[9]}}</span></h4>
+              </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-sm">
+                  <h4 class="ll"><span style="color: rgb(107, 3, 3);font-weight: bold">Mobile No: </span> <span style="color: rgb(0, 30, 114)"> {{l1[10]}}</span> </h4>
+                </div>
+                <div class="col-sm">
+                  <h4 class="ll"><span style="color: rgb(107, 3, 3);font-weight: bold">Username: </span> <span style="color: rgb(0, 30, 114)"> {{l1[11]}}</span></h4>
+                </div>
+                <div class="col-sm">
+                <h4 class="ll"><span style="color: rgb(107, 3, 3);font-weight: bold">D.O.B: </span> <span style="color: rgb(0, 30, 114)"> {{l1[12]}}</span></h4>
+                </div>
+              </div>
+        </div>
+
+{%endblock%}

@@ -1,0 +1,69 @@
+{%extends "side.html"%}
+
+{% block script %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/perm.css') }}">
+{% endblock %}
+
+{% block perm %}
+<h4 class="f_h4">Apply for Permanent License</h4>
+{%if(al==0)%}
+<h4 class="p_h4">!No Record Found, Please first Apply for Learning License</h4>
+{%elif(al==1)%}
+<h4 class="p_h4">Learning License has not been approved yet</h4>
+{%elif(al==2)%}
+        {%if(per==0)%}
+        <div class="row">
+            <div class="col">
+              <span class="l_h4">License ID: <span><span class=o_h4>{{id}}</span>
+            </div>
+            <div class="col">
+              <span class="l_h4">Registration Date : </span><span class="o_h4">{{dt}}</span>
+            </div>
+            <div class="col">
+                {%if(mn>6)%}
+                <span class="l_h4">Status: </span><span class="o_h4" style="color: greenyellow">CanApply</span>
+          
+                <a href="{{url_for("permanent",name=l[11],email=l[4])}}">  <button type="submit" value="Submit" class="apply" style="height:40px;width:130px;background-color:blueviolet;color:white;border:none;font-weight: 500">Apply</button></a>
+                {%else%}
+                <span class="l_h4">Status: </span><span class="o_h4" style="color : rgb(208, 255, 249)">Pending</span>
+                {%endif%}
+            </div>
+          </div>
+
+          {%elif(per==1)%}
+          <div class="row">
+            <div class="col">
+              <span class="l_h4">License ID: <span><span class=o_h4>{{id}}</span>
+            </div>
+            <div class="col">
+              <span class="l_h4">Registration Date : </span><span class="o_h4">{{dt}}</span>
+            </div>
+            <div class="col">
+      
+                <span class="l_h4">Status: </span><span class="o_h4" style="color: greenyellow">Applied</span>
+          
+               
+               
+            </div>
+          </div>
+
+        {%elif(per==2)%}
+        <div class="row">
+            <div class="col">
+              <span class="l_h4">License ID: <span><span class=o_h4>{{id}}</span>
+            </div>
+            <div class="col">
+              <span class="l_h4">Registration Date : </span><span class="o_h4">{{dt}}</span>
+            </div>
+            <div class="col">
+      
+                <span class="l_h4">Status: </span><span class="o_h4" style="color: greenyellow">Approved</span>
+          
+               
+               
+            </div>
+          </div>
+            
+        {%endif%}
+{%endif%}
+{% endblock %}

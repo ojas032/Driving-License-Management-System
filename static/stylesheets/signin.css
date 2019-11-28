@@ -55,9 +55,9 @@ body{
 
 .col2 .signin{
     position: relative;
-    height:550px;
+    height:auto;
     width:600px;
-    top:50%;
+    top:47%;
     left:50%;
     background-color: white;
     transform: translate(-50%,-50%);
@@ -75,4 +75,12 @@ body{
     width:90%;
     height: 80%;
     left:30px;
+}
+
+.l_h4{
+    font-size:12px;
+    color:red;
+    margin:0;
+    position: absolute;
+    padding: 0;
 }

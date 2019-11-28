@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+}
+
 body{
     margin:0;
     padding:0;
@@ -96,8 +102,8 @@ section{
     padding: 0px;
 } 
 
-.header p{
-    margin:0px 0px 5px 0px;
+.header{
+    width:90%;
 }
 
 .header .h2{
@@ -148,3 +154,149 @@ font-style: 'Roboto', sans-serif;
     padding:30px;
 }
 
+
+.footer {
+  
+        position: relative;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        color: white;
+        text-align: center;
+ }
+
+ .footer img{
+    width: 100%;
+    height: auto;
+ }
+
+
+ .footer p{
+     padding: 0;
+     margin:0;
+ }
+
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(81, 221, 168, 0.3); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(194, 41, 41, 0.5); 
+}
+
+
+
+
+
+.table{
+    position: absolute;
+    width:400px;
+    text-align: center;
+    top:40%;
+    z-index: 2;
+    color: white;
+}
+
+.table tr th{
+    color: white;
+}
+
+.table tr td{
+    color: white;
+}
+
+.fa{
+    font-size: 30px;
+}
+
+.fa1{
+    width:200px;
+    height: 40px;
+    padding-top: 10px;
+    font-size: 20px;
+    padding-bottom: 10px;
+    background-color:rgb(24, 24, 114);
+    color:white;
+}
+
+
+.fa2{
+    width:200px;
+    height: 40px;
+    padding-top: 10px;
+    font-size: 20px;
+    padding-bottom: 10px;
+    background-color:rgb(41, 171, 223);
+    color:white;
+}
+
+
+.fa3{
+    width:200px;
+    height: 40px;
+    padding-top: 10px;
+    font-size: 20px;
+    padding-bottom: 10px;
+    background-color:rgb(241, 66, 162);
+    color:white;
+}
+.fa4{
+    width:200px;
+    height: 40px;
+    padding-top: 10px;
+    font-size: 20px;
+    padding-bottom: 10px;
+    background-color:rgb(66, 142, 241);
+    color:white;
+}
+
+.cont{
+    position: relative;
+    top:50px;
+    height: 400px;
+    width: 100%;
+}
+
+.traffic{
+    border-left:5px;
+    border-left-color: coral;
+    margin-left:auto;
+    margin-right: auto;
+    position: relative;
+  border-left-width: 7px;
+  border-top: 5px solid coral;
+  border-left: 5px solid rgb(255, 138, 5);
+  border-right: 5px solid rgb(255, 51, 15);
+  border-bottom: 5px solid rgb(219, 255, 15);
+  display:table;
+  text-align: center;
+  color: #0f1974
+}
+
+.rules{
+    height:650px;
+    position: relative;
+    width: 100%;
+}
+
+.span1{
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    border-left: 5px solid rgb(179, 245, 26);
+    border-top: 5px solid rgb(255, 251, 5);
+   
+
+}
+.span2{
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    border-right: 5px solid rgb(255, 138, 5);
+    border-bottom: 5px solid rgb(255, 76, 5);
+}

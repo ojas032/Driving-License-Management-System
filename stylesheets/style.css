@@ -148,3 +148,15 @@ font-style: 'Roboto', sans-serif;
     padding:30px;
 }
 
+.posi{
+    width:10px;
+    background-color: darkgrey;
+}
+
+.button{
+    width:400px;
+    height: 40px;
+    background: rgb(109, 108, 108);
+    color: white;
+    border-radius: 10px;
+  }

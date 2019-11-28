@@ -6,8 +6,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     
+    <script>
+
+      function CheckPassword(inputtxt){ 
+          var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+          if(inputtxt.value.match(passw)) { 
+          alert('Correct, try another...')
+          return true;
+          }
+          else{ 
+          alert('Wrong...!')
+          return false;
+          }
+        }
+    </script>  
+
+
     </head>
-    <body>
+    <body onload='document.form1.password.focus()'>
             <div class="header">
                 <p><span class="h1">Driving License</span></p>
                 <span class="h2">Management System</span>
@@ -16,36 +32,65 @@
             <div class="row1">
                 <div class="col1">
                     <img src="{{ url_for('static', filename='images/image3.png') }}" />
-                    <button href="#" style="position:relative;top:230px;right:90px;height:40px;width:130px;background-color:blueviolet;color:white;border:none"><h6>SignIn</h6></button>
+                    <a href="{{url_for('start')}}"><button href="#" style="position:relative;top:230px;right:90px;height:40px;width:130px;background-color:blueviolet;color:white;border:none"><h6>SignIn</h6></button></a>
                 </div>
                 <div class="col2">
                        <div class="signin">
                            <h5>SignUp</h5>
                            <div class="bod">
+                              {% with messages = get_flashed_messages(category_filter=["all"]) %}
+                              {% if messages %}
+                                 <ul>
+                                    {% for message in messages %}
+                                   <h6 class="l_h4" style="margin-bottom: -5px;left:-40px;position: relative;"> {{ message }}</h6>
+                                    {% endfor %}
+                                 </ul>
+                              {% endif %}
+                              {% endwith %}
                             <form method="POST" action="{{url_for('create')}}">
                                    
                                     <div class="form-row ">
                                             <div class="form-group col-md-4">
                                               <label for="first">First Name</label>
-                                              <input type="text" class="form-control" id="first" placeholder="Email" name="first">
+                                              <input type="text" class="form-control" id="first" placeholder="First " name="first">
                                             </div>
                                             <div class="form-group col-md-4">
                                               <label for="Middle">Middle</label>
-                                              <input type="text" class="form-control" id="Middle" placeholder="Password" name="middle">
+                                              <input type="text" class="form-control" id="Middle" placeholder="Middle" name="middle">
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="last">Last</label>
-                                                <input type="text" class="form-control" id="last" placeholder="Password" name="last">
+                                                <input type="text" class="form-control" id="last" placeholder="Last" name="last">
                                             </div>
                                     </div>        
                                     <div class="form-row">
                                             <div class="form-group col-md-6">
+                                              
                                               <label for="inputEmail4">Email</label>
+                                              {% with messages = get_flashed_messages(category_filter=["email"]) %}
+                                                {% if messages %}
+                                                   <ul>
+                                                      {% for message in messages %}
+                                                     <span class="l_h4"> {{ message }}</span>
+                                                      {% endfor %}
+                                                   </ul>
+                                                {% endif %}
+                                                {% endwith %}
                                               <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email">
                                             </div>
                                             <div class="form-group col-md-6">
-                                              <label for="inputPassword4">Password</label>
-                                              <input type="password" class="form-control" id="inputPassword4" placeholder="Password" name="password">
+                                                <label for="inputPassword4">Password</label>
+                                                {% with messages = get_flashed_messages(category_filter=["password"]) %}
+                                                {% if messages %}
+                                                   <ul>
+                                                      {% for message in messages %}
+                                                     <span class="l_h4"> {{ message }}</span>
+                                                      {% endfor %}
+                                                   </ul>
+                                                {% endif %}
+                                                {% endwith %}
+                                            
+                                              <input type="password" class="form-control" id="inputPassword4" placeholder="Password" name="password" >
                                             </div>     
                                      </div>
                                      <div class="form-row">
@@ -57,21 +102,55 @@
                                               <label for="inputState">State</label>
                                               <select id="inputState" class="form-control" name="state">
                                                 <option selected>Choose...</option>
-                                                <option>...</option>
+                                                <option>Uttar Pradesh</option>
+                                                <option>Uttrakhand</option>
+                                                <option>Punjab</option>
+                                                <option>Tamil Nadu</option>
+                                                <option>Tripura</option>
+                                                <option>Agartala</option>
+                                                <option>Kolkata</option>
+                                                <option>Rajasthan</option>
                                               </select>
                                             </div>
                                             <div class="form-group col-md-2">
                                               <label for="inputZip">Zip</label>
+                                              {% with messages = get_flashed_messages(category_filter=["zip"]) %}
+                                                {% if messages %}
+                                                   <ul>
+                                                      {% for message in messages %}
+                                                     <span class="l_h4"> {{ message }}</span>
+                                                      {% endfor %}
+                                                   </ul>
+                                                {% endif %}
+                                                {% endwith %}
                                               <input type="text" class="form-control" id="inputZip" name="zip">
                                             </div>
                                     </div>       
                                     <div class="form-row">
                                             <div class="form-group col-md-6">
                                               <label for="Aadhar">Aadhar</label>
+                                              {% with messages = get_flashed_messages(category_filter=["aadhar"]) %}
+                                                {% if messages %}
+                                                   <ul>
+                                                      {% for message in messages %}
+                                                     <span class="l_h4"> {{ message }}</span>
+                                                      {% endfor %}
+                                                   </ul>
+                                                {% endif %}
+                                                {% endwith %}
                                               <input type="text" class="form-control" id="Aadhar" placeholder="Aadhar No." name="aadhar">
                                             </div>
                                             <div class="form-group col-md-6">
                                               <label for="Mobile">Mobile No.</label>
+                                              {% with messages = get_flashed_messages(category_filter=["mob"]) %}
+                                                {% if messages %}
+                                                   <ul>
+                                                      {% for message in messages %}
+                                                     <span class="l_h4"> {{ message }}</span>
+                                                      {% endfor %}
+                                                   </ul>
+                                                {% endif %}
+                                                {% endwith %}
                                               <input type="text" class="form-control" id="Mobile" placeholder="Mobile No." name="mobile">
                                             </div>     
                                      </div>
@@ -88,11 +167,12 @@
             
                                      </div>
                            
-                           <input type="submit" value="Submit" class="login" style="height:40px;width:130px;background-color:blueviolet;color:white;border:none;font-weight: 500">
+                           <input type="submit" value="Submit" class="login" style="height:40px;width:130px;background-color:blueviolet;color:white;border:none;font-weight: 500;margin-bottom: 20px;"  onclick="CheckPassword(document.form1.password)">
                            </form>
                            </div>
                        </div>
                 </div>
             </div>
+
     </body>
 </html>
