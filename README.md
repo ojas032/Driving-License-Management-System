@@ -1,15 +1,14 @@
-<meta name="google-site-verification" content="...">
-**Driving Licene Management System**
-<br/>
+
+# Driving License Management System<br/>
 Project is made on Flask Framework and for database SQL is used
 So ,Lets Start With The
-SignIn Page
+**SignIn Page**
 ![](Screenshots/Screenshot%20(5).png)
-SignUp Page
+**SignUp Page**
 ![](Screenshots/Screenshot%20(9).png)
-User Dashboard
+**User Dashboard**
 ![](Screenshots/Screenshot%20(10).png)
-Admin Dashboard
+**Admin Dashboard**
 ![](Screenshots/Screenshot%20(15)_LI.jpg)
 Step1:<br/>
 Install flask by using the command:-<br/>
@@ -30,11 +29,11 @@ In phpmyadmin you need to create three table in (mydb)<br/>
 2.users<br/>
 3.request<br/>
 
-Schema For table person
+**Schema For table person**
 ![](Screenshots/1.PNG)
-Schema For table users
+**Schema For table users**
 ![](Screenshots/3.PNG)
-Schema For table request
+**Schema For table request**
 ![](Screenshots/2.PNG)
 
 
